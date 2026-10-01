@@ -1,1 +1,1684 @@
-# Portfolio-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alice Helena | Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#070707;
+  --panel:#101010;
+  --red:#e10600;
+  --red2:#ff2a23;
+  --text:#f5f5f5;
+  --muted:#9a9a9a;
+  --line:#292929;
+  --max:1180px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Rajdhani',sans-serif;
+  font-size:18px;
+  overflow-x:hidden;
+}
+
+body::-webkit-scrollbar{
+  display:none;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+/* Background */
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(225,6,0,.13),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 5% 80%,
+      rgba(225,6,0,.08),
+      transparent 24%
+    ),
+    #070707;
+}
+
+.grid{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  opacity:.12;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.06) 1px,
+      transparent 1px
+    );
+  background-size:45px 45px;
+  mask-image:linear-gradient(
+    to bottom,
+    black,
+    transparent 85%
+  );
+}
+
+/* Navigation */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  backdrop-filter:blur(14px);
+  background:rgba(7,7,7,.78);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.nav-inner{
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:'Orbitron',sans-serif;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.logo span,
+.accent,
+.section-title span{
+  color:var(--red);
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
+  color:#bbb;
+  font-weight:600;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+.menu{
+  display:none;
+  color:white;
+  font-size:25px;
+  cursor:pointer;
+}
+
+/* Sections */
+
+section{
+  padding:105px 0;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:130px;
+}
+
+.hero-content{
+  position:relative;
+}
+
+.eyebrow,
+.section-label{
+  color:var(--red2);
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.eyebrow{
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(55px,10vw,125px);
+  line-height:.86;
+  letter-spacing:-4px;
+}
+
+.hero h2{
+  max-width:800px;
+  margin:30px 0 18px;
+  font-size:clamp(22px,3vw,34px);
+  line-height:1.1;
+}
+
+.hero p{
+  max-width:720px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn{
+  display:inline-block;
+  border:1px solid #444;
+  padding:12px 18px;
+  font-weight:700;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.btn.primary{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  border-color:var(--red2);
+}
+
+.hero-stat{
+  display:flex;
+  gap:40px;
+  margin-top:65px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  display:flex;
+  flex-direction:column;
+}
+
+.stat strong{
+  font-family:'Orbitron';
+  font-size:24px;
+}
+
+.stat span{
+  font-size:13px;
+  color:var(--muted);
+  letter-spacing:1px;
+}
+
+.red-line{
+  height:2px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    var(--red),
+    transparent
+  );
+}
+
+/* About */
+
+.section-label{
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.section-title{
+  font-family:'Orbitron';
+  font-size:clamp(30px,5vw,54px);
+  margin-bottom:38px;
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:45px;
+}
+
+.about-text p{
+  color:#bbb;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.info-card,
+.card,
+.project,
+.timeline-item,
+.contact{
+  background:linear-gradient(
+    145deg,
+    #121212,
+    #0b0b0b
+  );
+  border:1px solid var(--line);
+}
+
+.info-card{
+  padding:25px;
+}
+
+.info-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:13px 0;
+  border-bottom:1px solid #252525;
+}
+
+.info-row:last-child{
+  border-bottom:0;
+}
+
+.info-row span:first-child{
+  color:#777;
+}
+
+.info-row span:last-child{
+  font-weight:600;
+  text-align:right;
+}
+
+/* Interests */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card{
+  padding:25px;
+  min-height:190px;
+}
+
+.icon{
+  color:var(--red);
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.card h3{
+  font-family:'Orbitron';
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.card p,
+.project p,
+.timeline-item p,
+.contact p{
+  color:#999;
+  line-height:1.6;
+}
+
+/* Skills */
+
+.skills{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px 45px;
+}
+
+.skill-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+
+.skill-top span:last-child{
+  color:#777;
+  font-size:14px;
+}
+
+.bar{
+  height:7px;
+  background:#242424;
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  background:var(--red);
+}
+
+/* Projects */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.project{
+  padding:28px;
+  position:relative;
+  transition:.25s;
+}
+
+.project:hover{
+  transform:translateY(-4px);
+  border-color:#444;
+}
+
+.project-number{
+  color:#666;
+  font-size:13px;
+  letter-spacing:2px;
+  margin-bottom:18px;
+}
+
+.project h3{
+  font-family:'Orbitron';
+  font-size:22px;
+  margin-bottom:12px;
+}
+
+.tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.tag{
+  font-size:12px;
+  border:1px solid #333;
+  padding:6px 9px;
+  color:#aaa;
+}
+
+/* Telemetry ongoing project highlight */
+
+.ongoing-project{
+  border:2px solid var(--red) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(225,6,0,.16),
+      rgba(8,8,8,.96)
+    );
+
+  box-shadow:
+    0 0 0 1px rgba(225,6,0,.22),
+    0 0 32px rgba(225,6,0,.25),
+    inset 0 0 30px rgba(225,6,0,.06);
+
+  transform:translateY(-3px);
+}
+
+.ongoing-project:hover{
+  border-color:var(--red2) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(255,42,35,.3),
+    0 0 45px rgba(225,6,0,.38),
+    inset 0 0 35px rgba(225,6,0,.08);
+
+  transform:translateY(-6px);
+}
+
+.ongoing-badge{
+  display:inline-block;
+  margin-left:12px;
+  padding:5px 9px;
+  border:1px solid var(--red);
+  border-radius:999px;
+  color:#ff4038;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  vertical-align:middle;
+}
+
+/* Student Management Demo */
+
+.student-demo{
+  margin-top:24px;
+  border-top:1px solid #292929;
+  padding-top:18px;
+}
+
+.demo-tabs{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.demo-tab,
+.demo-form button,
+.delete-btn{
+  background:#171717;
+  color:#ddd;
+  border:1px solid #333;
+  padding:9px 11px;
+  cursor:pointer;
+  font-family:inherit;
+  font-weight:700;
+}
+
+.demo-tab.active,
+.demo-form button{
+  background:var(--red);
+  border-color:var(--red);
+  color:white;
+}
+
+.demo-panel{
+  display:none;
+}
+
+.demo-panel.active{
+  display:block;
+}
+
+.demo-form{
+  display:grid;
+  gap:9px;
+}
+
+.demo-form input,
+.demo-form select{
+  background:#0c0c0c;
+  color:#eee;
+  border:1px solid #333;
+  padding:10px;
+  font-family:inherit;
+}
+
+.demo-note{
+  font-size:12px;
+  color:#777;
+  margin-top:10px;
+}
+
+.student-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+}
+
+.student-table th,
+.student-table td{
+  padding:8px;
+  border-bottom:1px solid #292929;
+  text-align:left;
+}
+
+.student-table th{
+  color:#777;
+}
+
+.delete-btn{
+  font-size:11px;
+  padding:5px 7px;
+}
+
+/* Journey */
+
+.timeline{
+  border-left:1px solid #333;
+  padding-left:25px;
+  display:grid;
+  gap:20px;
+}
+
+.timeline-item{
+  padding:23px;
+}
+
+.timeline-item h3{
+  font-family:'Orbitron';
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+/* Contact */
+
+.contact{
+  padding:45px;
+  text-align:center;
+}
+
+.contact p{
+  max-width:700px;
+  margin:auto;
+}
+
+.contact .buttons{
+  justify-content:center;
+}
+
+/* Footer */
+
+footer{
+  border-top:1px solid #222;
+  padding:25px 0;
+  color:#666;
+  font-size:13px;
+  text-align:center;
+}
+
+/* Exact uploaded Pirelli tyre */
+
+.scroll-tyre{
+  position:fixed;
+  right:3vw;
+  bottom:8vh;
+  width:clamp(70px,9vw,130px);
+  z-index:20;
+  pointer-events:none;
+  opacity:.92;
+  transition:transform .18s ease-out;
+}
+
+.scroll-tyre img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:50%;
+}
+
+/* Responsive */
+
+@media(max-width:800px){
+
+  .about,
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .skills{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:74px;
+    left:0;
+    right:0;
+    background:#090909;
+    padding:20px;
+    flex-direction:column;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero-stat{
+    gap:22px;
+  }
+}
+
+@media(max-width:520px){
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .contact{
+    padding:28px;
+  }
+
+  .scroll-tyre{
+    width:72px;
+    right:8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#home" class="logo">
+      ALICE<span>.</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about">ABOUT</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#journey">JOURNEY</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+  </div>
+</nav>
+
+<!-- Use the exact Pirelli image you uploaded -->
+<div class="scroll-tyre" aria-hidden="true">
+  <img src="1000140447.png" alt="">
+</div>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      Computer Science • Data • Motorsport
+    </div>
+
+    <h1>
+      ALICE<br>
+      <span class="accent">HELENA</span>
+    </h1>
+
+    <h2>
+      B.Sc. Computer Science Student &
+      Future Motorsport Telemetry Data Analyst
+    </h2>
+
+    <p>
+      I love turning ideas into code — from websites and apps
+      to games and data-driven projects. My interests sit at
+      the intersection of technology, cybersecurity, data
+      analysis and motorsports.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#projects">
+        VIEW PROJECTS
+      </a>
+
+      <a class="btn" href="#contact">
+        LET'S CONNECT
+      </a>
+    </div>
+
+    <div class="hero-stat">
+
+      <div class="stat">
+        <strong>CS</strong>
+        <span>STUDENT</span>
+      </div>
+
+      <div class="stat">
+        <strong>CODE</strong>
+        <span>CREATE • BUILD • LEARN</span>
+      </div>
+
+      <div class="stat">
+        <strong>RACING</strong>
+        <span>TELEMETRY & DATA</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="red-line"></div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-label">
+      01 / Profile
+    </div>
+
+    <div class="section-title">
+      ABOUT <span>ME</span>
+    </div>
+
+    <div class="about">
+
+      <div class="about-text">
+
+        <p>
+          I'm a B.Sc. Computer Science student with a strong
+          interest in technology, programming, data and
+          motorsports. I enjoy learning by building things
+          rather than only studying concepts.
+        </p>
+
+        <p>
+          Coding is one of my biggest interests. I like
+          experimenting with websites, applications and
+          game development while improving my problem-solving
+          skills. I'm also interested in cybersecurity and
+          the way technology can be used to understand
+          complex systems.
+        </p>
+
+        <p>
+          My long-term goal is to work with motorsport
+          telemetry and data analysis, combining my passion
+          for racing with programming, statistics and
+          real-time performance data.
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <div class="info-row">
+          <span>Degree</span>
+          <span>B.Sc. Computer Science</span>
+        </div>
+
+        <div class="info-row">
+          <span>Focus</span>
+          <span>Programming & Data</span>
+        </div>
+
+        <div class="info-row">
+          <span>Interests</span>
+          <span>Motorsport • Cybersecurity</span>
+        </div>
+
+        <div class="info-row">
+          <span>Creative Side</span>
+          <span>Games • Apps • Websites</span>
+        </div>
+
+        <div class="info-row">
+          <span>Goal</span>
+          <span>Telemetry Data Analysis</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INTERESTS -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      02 / Interests
+    </div>
+
+    <div class="section-title">
+      WHAT I <span>ENJOY</span>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">⌘</div>
+        <h3>CODING</h3>
+        <p>
+          Building practical projects and strengthening
+          programming and problem-solving skills.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">◈</div>
+        <h3>GAME DEVELOPMENT</h3>
+        <p>
+          Exploring how code, game logic, design and
+          interaction come together to create playable
+          experiences.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">▣</div>
+        <h3>APP & WEB DEVELOPMENT</h3>
+        <p>
+          Creating useful, responsive interfaces and
+          experimenting with ideas that can become real
+          applications.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⌁</div>
+        <h3>DATA & TELEMETRY</h3>
+        <p>
+          Interested in turning raw performance data into
+          information that can help understand racing
+          behaviour.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">◉</div>
+        <h3>CYBERSECURITY</h3>
+        <p>
+          Learning about digital security, vulnerabilities,
+          safe systems and the technology behind
+          cybersecurity.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">△</div>
+        <h3>MOTORSPORT</h3>
+        <p>
+          Passionate about racing technology, vehicle
+          performance and the data behind competitive
+          motorsport.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-label">
+      03 / Toolkit
+    </div>
+
+    <div class="section-title">
+      SKILLS & <span>TECH</span>
+    </div>
+
+    <div class="skills">
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>C / C++</span>
+          <span>Core</span>
+        </div>
+        <div class="bar">
+          <i style="width:82%"></i>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Python</span>
+          <span>Learning</span>
+        </div>
+        <div class="bar">
+          <i style="width:75%"></i>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>HTML / CSS</span>
+          <span>60.7%</span>
+        </div>
+        <div class="bar">
+          <i style="width:60.7%"></i>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>JavaScript</span>
+          <span>Learning</span>
+        </div>
+        <div class="bar">
+          <i style="width:66%"></i>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Problem Solving</span>
+          <span>Core</span>
+        </div>
+        <div class="bar">
+          <i style="width:88%"></i>
+        </div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Data Analysis</span>
+          <span>Exploring</span>
+        </div>
+        <div class="bar">
+          <i style="width:62%"></i>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-label">
+      04 / Selected Work
+    </div>
+
+    <div class="section-title">
+      PROJECT <span>LAB</span>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- PROJECT 01 -->
+
+      <article class="project">
+
+        <div class="project-number">
+          PROJECT 01
+        </div>
+
+        <h3>
+          STUDENT MANAGEMENT SYSTEM
+        </h3>
+
+        <p>
+          A C-based academic project focused on storing,
+          processing and managing student information
+          while applying core programming concepts.
+        </p>
+
+        <div class="tags">
+          <span class="tag">C</span>
+          <span class="tag">Logic</span>
+          <span class="tag">Data</span>
+        </div>
+
+        <div class="student-demo" id="studentDemo">
+
+          <div class="demo-tabs">
+
+            <button
+              class="demo-tab active"
+              data-tab="add">
+              Add Student
+            </button>
+
+            <button
+              class="demo-tab"
+              data-tab="records">
+              View Records
+            </button>
+
+            <button
+              class="demo-tab"
+              data-tab="stats">
+              Statistics
+            </button>
+
+          </div>
+
+          <div
+            class="demo-panel active"
+            id="add">
+
+            <form
+              class="demo-form"
+              id="studentForm">
+
+              <input
+                id="studentName"
+                placeholder="Student name"
+                required
+                maxlength="40">
+
+              <input
+                id="studentRoll"
+                placeholder="Roll number"
+                required
+                maxlength="15">
+
+              <select
+                id="studentDept"
+                required>
+
+                <option value="">
+                  Department
+                </option>
+
+                <option>
+                  B.Sc. Computer Science
+                </option>
+
+                <option>BCA</option>
+                <option>B.Sc. IT</option>
+
+              </select>
+
+              <input
+                id="studentMark"
+                type="number"
+                min="0"
+                max="100"
+                placeholder="Mark (0–100)"
+                required>
+
+              <button type="submit">
+                ADD RECORD
+              </button>
+
+            </form>
+
+            <div
+              class="demo-note"
+              id="formMessage">
+
+              Demo data stays inside this page.
+
+            </div>
+
+          </div>
+
+          <div
+            class="demo-panel"
+            id="records">
+
+            <table class="student-table">
+
+              <thead>
+                <tr>
+                  <th>NAME</th>
+                  <th>ROLL</th>
+                  <th>DEPARTMENT</th>
+                  <th>MARK</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody id="studentRows"></tbody>
+
+            </table>
+
+          </div>
+
+          <div
+            class="demo-panel"
+            id="stats">
+
+            <div class="info-row">
+              <span>Total students</span>
+              <span id="totalStudents">0</span>
+            </div>
+
+            <div class="info-row">
+              <span>Average mark</span>
+              <span id="averageMark">0</span>
+            </div>
+
+            <div class="info-row">
+              <span>Highest mark</span>
+              <span id="highestMark">0</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 02 -->
+
+      <article class="project">
+
+        <div class="project-number">
+          PROJECT 02
+        </div>
+
+        <h3>BRUNPLAYER</h3>
+
+        <p>
+An app-development project exploring interface
+          design, application logic and building a practical
+          user-focused experience.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">
+            App Development
+          </span>
+
+          <span class="tag">UI</span>
+          <span class="tag">Logic</span>
+
+        </div>
+
+        <div class="buttons">
+
+          <a
+            class="btn primary"
+            href="https://alice-724.github.io/Brunplayer7/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            OPEN BRUNPLAYER
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 03 -->
+
+      <article class="project ongoing-project">
+
+        <div class="project-number">
+
+          PROJECT 03
+
+          <span class="ongoing-badge">
+            ONGOING PROJECT
+          </span>
+
+        </div>
+
+        <h3>
+          TELEMETRY DATA CONCEPT
+        </h3>
+
+        <p>
+An exploration of analysing racing data such as
+          speed, braking, acceleration and lap performance
+          to understand vehicle behaviour.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Data</span>
+          <span class="tag">Motorsport</span>
+          <span class="tag">Python</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section id="journey">
+
+  <div class="container">
+
+    <div class="section-label">
+      05 / Direction
+    </div>
+
+    <div class="section-title">
+      MY <span>JOURNEY</span>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>BUILD THE FOUNDATION</h3>
+        <p>
+          Strengthen programming, algorithms, databases,
+          web development and computer science fundamentals.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>EXPAND INTO DATA</h3>
+        <p>
+          Develop skills in Python, statistics, data
+          visualisation and practical data analysis.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>EXPLORE AUTOMOTIVE TECHNOLOGY</h3>
+        <p>
+          Learn how sensors, vehicle systems, performance
+          data and racing technology connect with software.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>TELEMETRY & MOTORSPORT</h3>
+        <p>
+          Work toward a career where programming and data
+          analysis can be applied to motorsport telemetry
+          and performance engineering.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact">
+
+      <div class="section-label">
+        Contact
+      </div>
+
+      <div class="section-title">
+        LET'S <span>CONNECT</span>
+      </div>
+
+      <p>
+        Interested in technology, coding, motorsport or
+        building something together? Feel free to connect
+        and talk about projects, ideas and opportunities.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="mailto:your.email@example.com">
+
+          EMAIL ME
+
+        </a>
+
+        <a
+          class="btn"
+          href="https://www.linkedin.com/"
+          target="_blank">
+
+          LINKEDIN
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    © 2026 Alice Helena · Built with code,
+    curiosity & a love for racing.
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* Mobile menu */
+
+function toggleMenu(){
+
+  document
+    .getElementById('navLinks')
+    .classList.toggle('open');
+
+}
+
+document
+  .querySelectorAll('.nav-links a')
+  .forEach(a => {
+
+    a.addEventListener('click', () => {
+
+      document
+        .getElementById('navLinks')
+        .classList
+        .remove('open');
+
+    });
+
+  });
+
+
+/* Pirelli tyre scroll animation */
+
+const tyre =
+  document.querySelector('.scroll-tyre');
+
+let lastScroll = window.scrollY;
+let rotation = 0;
+
+window.addEventListener(
+  'scroll',
+  () => {
+
+    const y = window.scrollY;
+    const delta = y - lastScroll;
+
+    rotation += delta * 0.55;
+
+    tyre.style.transform =
+      'translateY(' +
+      Math.sin(y * 0.006) * 10 +
+      'px) rotate(' +
+      rotation +
+      'deg)';
+
+    lastScroll = y;
+
+  },
+  {passive:true}
+);
+
+
+/* Student Management System */
+
+const demo =
+  document.getElementById('studentDemo');
+
+if(demo){
+
+  const students = [
+
+    {
+      name:'Abhi Sree L',
+      roll:'CS001',
+      dept:'B.Sc. Computer Science',
+      mark:88
+    },
+
+    {
+      name:'Abinaya S',
+      roll:'CS002',
+      dept:'B.Sc. Computer Science',
+      mark:92
+    },
+    {
+      name:'Alice Helena A',
+      roll:'CS003',
+      dept:'B.Sc. Computer Science',
+      mark:86
+    }
+
+  ];
+
+  const rows =
+    document.getElementById('studentRows');
+
+
+  function escapeHtml(value){
+
+    return String(value)
+      .replace(
+        /[&<>"']/g,
+        character => ({
+
+          '&':'&amp;',
+          '<':'&lt;',
+          '>':'&gt;',
+          '"':'&quot;',
+          "'":'&#039;'
+
+        }[character])
+      );
+
+  }
+
+
+  function render(){
+
+    rows.innerHTML =
+      students.map(
+        (student,index) => `
+
+          <tr>
+
+            <td>
+              ${escapeHtml(student.name)}
+            </td>
+
+            <td>
+              ${escapeHtml(student.roll)}
+            </td>
+
+            <td>
+              ${escapeHtml(student.dept)}
+            </td>
+
+            <td>
+              ${student.mark}
+            </td>
+
+            <td>
+
+              <button
+                class="delete-btn"
+                data-index="${index}">
+
+                Delete
+
+              </button>
+
+            </td>
+
+          </tr>
+
+        `
+      ).join('');
+
+
+    document
+      .getElementById('totalStudents')
+      .textContent =
+      students.length;
+
+
+    document
+      .getElementById('averageMark')
+      .textContent =
+      students.length
+      ? (
+          students.reduce(
+            (total,student) =>
+              total + student.mark,
+            0
+          ) / students.length
+        ).toFixed(1)
+      : '0';
+
+
+    document
+      .getElementById('highestMark')
+      .textContent =
+      students.length
+      ? Math.max(
+          ...students.map(
+            student => student.mark
+          )
+        )
+      : '0';
+
+
+    rows
+      .querySelectorAll('.delete-btn')
+      .forEach(button => {
+
+        button.onclick = () => {
+
+          students.splice(
+            Number(button.dataset.index),
+            1
+          );
+
+          render();
+
+        };
+
+      });
+
+  }
+
+
+  /* Demo tabs */
+
+  document
+    .querySelectorAll('.demo-tab')
+    .forEach(tab => {
+
+      tab.onclick = () => {
+
+        document
+          .querySelectorAll('.demo-tab')
+          .forEach(item =>
+            item.classList.remove('active')
+          );
+
+        document
+          .querySelectorAll('.demo-panel')
+          .forEach(panel =>
+            panel.classList.remove('active')
+          );
+
+        tab.classList.add('active');
+
+        document
+          .getElementById(tab.dataset.tab)
+          .classList.add('active');
+
+      };
+
+    });
+
+
+  /* Add student */
+
+  document
+    .getElementById('studentForm')
+    .onsubmit = event => {
+
+      event.preventDefault();
+
+      students.push({
+
+        name:
+          studentName.value,
+
+        roll:
+          studentRoll.value,
+
+        dept:
+          studentDept.value,
+
+        mark:
+          Number(studentMark.value)
+
+      });
+
+      event.target.reset();
+
+      document
+        .getElementById('formMessage')
+        .textContent =
+        'Student added successfully.';
+
+      render();
+
+    };
+
+
+  render();
+
+}
+
+</script>
+
+</body>
+</html>
+   
